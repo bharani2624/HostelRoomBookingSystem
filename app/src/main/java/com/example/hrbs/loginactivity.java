@@ -2,6 +2,8 @@ package com.example.hrbs;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +26,7 @@ public class loginactivity extends AppCompatActivity {
 
 
     EditText email,password;
+    Button loginbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,18 @@ public class loginactivity extends AppCompatActivity {
         setContentView(R.layout.activity_loginactivity);
         email=findViewById(R.id.login_email);
         password=findViewById(R.id.login_password);
+        loginbtn=findViewById(R.id.loginbutton);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!validateEmail()|!validatePassword()){}
+                else{
+                    checkUser();
+                }
+            }
+        });
     }
+
     public Boolean validateEmail()
     {
         String emailverify=email.getText().toString();
@@ -68,8 +82,8 @@ public class loginactivity extends AppCompatActivity {
                 if(snapshot.exists())
                 {
                     email.setError(null);
-                    String passwordDB=snapshot.child(userEmail).child("password").getValue(String.class);
-                    if(!Objects.equals(passwordDB,userPassword))
+                    String passwordDB = snapshot.getChildren().iterator().next().child("password").getValue(String.class);
+                    if(Objects.equals(passwordDB,userPassword))
                     {
                         email.setError(null);
                         Intent intent=new Intent(loginactivity.this,MainActivity.class);

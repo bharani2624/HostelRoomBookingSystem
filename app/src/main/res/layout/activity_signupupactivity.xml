@@ -63,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="@string/signup"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:id="@+id/signupbtn"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +72,8 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/already_have_an_account_login"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/redirectText"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "150115832816",
+    "project_id": "hrbs-2624",
+    "storage_bucket": "hrbs-2624.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150115832816:android:ef087a2f9e2a8817de4335",
+        "android_client_info": {
+          "package_name": "com.example.hrbs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0MYR3lwbk2wPrpBLy9Gu_fuXCoR8Lcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

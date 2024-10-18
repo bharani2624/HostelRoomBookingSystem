@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">hrbs</string>
+    <string name="click_me">Click Me</string>
+    <string name="home">home</string>
+    <string name="query">Query</string>
+    <string name="profile">profile</string>
+    <string name="hostels">Hostels</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="already_have_an_account_login">Already Have An Account? Login</string>
+</resources>

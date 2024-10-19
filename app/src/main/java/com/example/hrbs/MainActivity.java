@@ -1,7 +1,12 @@
 package com.example.hrbs;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.transition.Scene;
+import android.transition.TransitionManager;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +18,11 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     CardView sapphire,emerald,pearl,coral,ruby,diamond;
+    private Scene sceneOne,sceneTwo;
+    private ViewGroup sceneRoot;
+    
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         coral=findViewById(R.id.coralCard);
         ruby=findViewById(R.id.rubyCard);
         diamond=findViewById(R.id.diamondCard);
+        sapphire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,sapphire.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

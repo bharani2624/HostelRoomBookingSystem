@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
     CardView sapphire,emerald,pearl,coral,ruby,diamond;
     private Scene sceneOne,sceneTwo;
     private ViewGroup sceneRoot;
-    
-
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

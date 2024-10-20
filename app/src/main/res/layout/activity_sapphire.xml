@@ -42,10 +42,13 @@
                 />
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="top|end"
-                android:background="@drawable/rounded"
+                android:id="@+id/closeIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/circle"
                 android:src="@drawable/outline_close_24" />
 
         </FrameLayout>

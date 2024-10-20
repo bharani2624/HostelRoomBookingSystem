@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -28,6 +27,7 @@ public class sapphire extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(sapphire.this,MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
             }
         });
     }

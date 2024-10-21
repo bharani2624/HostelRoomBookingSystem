@@ -17,9 +17,15 @@
     <string name="description">The Sapphire Hostel enforces strict rules, including no drinking, no smoking, and no day scholars or external visitors, such as girls, being allowed inside. Electronic items are also prohibited. These rules help maintain discipline and ensure a focused and secure environment for all residents.</string>
     <string name="ameneties">Ameneties</string>
     <string name="four_cot">Four Cot</string>
+    <string name="single_cot">Single Cot</string>
     <string name="non_ac">Non Ac</string>
+    <string name="ac">Ac</string>
     <string name="badmintoncourt">BadmintonCourt</string>
     <string name="indoorgames">IndoorGames</string>
     <string name="tv">TV</string>
+    <string name="etext">Entire Emerald Hostel</string>
+    <string name="ctext">Entire Coral Hostel</string>
+    <string name="ptext">Entire Pearl Hostel</string>
+    <string name="rtext">Entire Ruby Hostel</string>
     <string name="wi_fi">Wi-fi</string>
 </resources>

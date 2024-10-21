@@ -13,7 +13,23 @@
         android:theme="@style/Theme.Hrbs"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+            android:name=".ruby"
+            android:exported="false" />
+        <activity
+            android:name=".Ruby"
+            android:exported="false" />
+        <activity
+            android:name=".pearl"
+            android:exported="false" />
+        <activity
+            android:name=".coral"
+            android:exported="false" />
+        <activity
+            android:name=".emerald"
+=======
             android:name=".booksapphire"
+>>>>>>> f3fc6aad5708c14491c4b2dd8265b9967edf717f
             android:exported="false" />
         <activity
             android:name=".sapphire"
@@ -32,7 +48,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
+<<<<<<< HEAD
+            android:exported="true" />
+=======
             android:exported="true"></activity>
+>>>>>>> f3fc6aad5708c14491c4b2dd8265b9967edf717f
     </application>
 
 </manifest>

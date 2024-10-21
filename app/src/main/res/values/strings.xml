@@ -22,4 +22,6 @@
     <string name="indoorgames">IndoorGames</string>
     <string name="tv">TV</string>
     <string name="wi_fi">Wi-fi</string>
+    <string name="don_t_have_an_account_signup">Don\'t Have An Account? SignUP</string>
+    <string name="book">Book</string>
 </resources>

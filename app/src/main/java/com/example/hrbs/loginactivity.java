@@ -110,8 +110,8 @@ public class loginactivity extends AppCompatActivity {
                     if(Objects.equals(passwordDB,userPassword))
                     {
                         email.setError(null);
-                        Intent intent=new Intent(loginactivity.this,MainActivity.class);
-                        startActivity(intent);
+                        SessionSaver(userEmail);
+                        navigate();
                     }
                     else
                     {
@@ -132,7 +132,6 @@ public class loginactivity extends AppCompatActivity {
                 Map<String,Object> tokenData=new HashMap<>();
                 tokenData.put("tokenExpiry",expiryTime);
                 reference.child(userEmail.replace(".","_")).updateChildren(tokenData);
-//                reference.child(userEmail.replace(".", "_")).updateChildren(tokenData);
 
 
             }

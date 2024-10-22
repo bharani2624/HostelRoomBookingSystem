@@ -15,44 +15,67 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp">
 
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="500dp"-->
-        <!--            android:background="@color/black"-->
-        <!--            android:gravity="center"-->
-        <!--            android:orientation="vertical">-->
-
-        <!--            <ImageView-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="523dp"-->
-        <!--                android:background="@drawable/black_border"-->
-        <!--                android:scaleType="fitXY"-->
-        <!--                android:src="@drawable/sapphire2" />-->
-        <!--        </LinearLayout>-->
-
-        <FrameLayout
-            android:layout_height="wrap_content"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="523dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/sapphire2"
-                />
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
-            <ImageView
-                android:id="@+id/closeIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="top"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/circle"
-                android:src="@drawable/outline_close_24" />
+            <!-- LinearLayout to hold multiple ImageView elements for horizontal scrolling -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        </FrameLayout>
+                <!-- First ImageView -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphire2"
+                        android:contentDescription="@string/description_sapphire2" />
+                </FrameLayout>
 
+                <!-- Second ImageView -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphier3"
+                        android:contentDescription="@string/description_sapphire2" />
+                </FrameLayout>
+
+                <!-- Third ImageView -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphire2"
+                        android:contentDescription="@string/description_sapphire2" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Close Icon ImageView -->
+        <ImageView
+            android:id="@+id/closeIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/outline_close_24" />
 
     </androidx.cardview.widget.CardView>
 

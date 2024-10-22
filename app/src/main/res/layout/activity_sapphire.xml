@@ -58,6 +58,14 @@
                         android:contentDescription="@string/description_sapphire2" />
                 </FrameLayout>
 
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="492dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sapphire2" />
+
             </LinearLayout>
 
         </HorizontalScrollView>
@@ -83,139 +91,150 @@
         android:layout_margin="0dp"
         android:elevation="0dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="454dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:gravity="left"
-                android:text="@string/stext"
-                android:textSize="25sp"
-                android:textStyle="bold"
-
-                tools:ignore="RtlHardcoded" />
-
-            <View
-                android:layout_width="400dp"
-                android:layout_height="0.95dp"
-                android:layout_gravity="center"
-                android:background="@android:color/black" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/ameneties"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:divider="@drawable/empty_tall_divider"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:showDividers="middle">
+                android:layout_height="356dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
-                    android:padding="1dp"
-                    android:text="@string/wi_fi"
-                    android:textSize="20sp"
-
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
-                    android:text="@string/tv"
-                    android:textSize="20sp"
-
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
-                    android:text="@string/indoorgames"
-                    android:textSize="20sp"
-
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
-                    android:baselineAligned="false"
-                    android:text="@string/badmintoncourt"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:divider="@drawable/empty_tall_divider"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:showDividers="middle">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
+                    android:id="@+id/opop"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="@string/non_ac"
-                    android:textSize="20sp" />
+                    android:gravity="left"
+                    android:text="@string/stext"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+
+                    tools:ignore="RtlHardcoded" />
+
+                <View
+                    android:layout_width="400dp"
+                    android:layout_height="0.95dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded"
-                    android:text="@string/four_cot"
-                    android:textSize="20sp"
+                    android:layout_margin="10dp"
+                    android:text="@string/ameneties"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:divider="@drawable/empty_tall_divider"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:showDividers="middle
+">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:padding="1dp"
+                        android:text="@string/wi_fi"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="@string/tv"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="@string/indoorgames"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:baselineAligned="false"
+                        android:text="@string/badmintoncourt"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:divider="@drawable/empty_tall_divider"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="@string/non_ac"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="@string/four_cot"
+                        android:textSize="20sp"
+
+                        />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="400dp"
+                    android:layout_height="0.95dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Rules"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/description"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
 
             </LinearLayout>
 
 
-            <View
-                android:layout_width="400dp"
-                android:layout_height="0.95dp"
-                android:layout_gravity="center"
-                android:background="@android:color/black" />
+        </ScrollView>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Rules"
-                android:textSize="25sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@string/description"
-                android:textSize="15sp"
-                android:textStyle="italic" />
 
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         emerald.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,5 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
             }
         });
+
     }
 }

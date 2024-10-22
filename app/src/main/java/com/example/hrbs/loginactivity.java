@@ -1,6 +1,7 @@
 package com.example.hrbs;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class loginactivity extends AppCompatActivity {
@@ -27,6 +30,9 @@ public class loginactivity extends AppCompatActivity {
 
     EditText email,password;
     Button loginbtn;
+    SharedPreferences sharedPreferences;
+    private static final long SESSION_DURATION=90L * 24 * 60 * 60 * 1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,8 @@ public class loginactivity extends AppCompatActivity {
         email=findViewById(R.id.login_email);
         password=findViewById(R.id.login_password);
         loginbtn=findViewById(R.id.loginbutton);
+        sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +78,22 @@ public class loginactivity extends AppCompatActivity {
             return true;
         }
     }
+
+    public boolean isLoggedIn()
+    {
+        long currentTime=System.currentTimeMillis();
+        long expirationTime=sharedPreferences.getLong("tokenExpiry",0);
+        return currentTime<expirationTime;
+    }
+
+    private  void navigate()
+    {
+        Intent intent=new Intent(loginactivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
     public void checkUser()
     {
         String userEmail=email.getText().toString();
@@ -96,6 +120,21 @@ public class loginactivity extends AppCompatActivity {
                     }
                 }
                 else{email.setError("Invalid Email");}
+            }
+
+            public void SessionSaver(String UserEmail)
+            {
+                long currentTime=System.currentTimeMillis();
+                long expiryTime=currentTime+SESSION_DURATION;
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putLong("tokenExpiry",expiryTime);
+                editor.apply();
+                Map<String,Object> tokenData=new HashMap<>();
+                tokenData.put("tokenExpiry",expiryTime);
+                reference.child(userEmail.replace(".","_")).updateChildren(tokenData);
+//                reference.child(userEmail.replace(".", "_")).updateChildren(tokenData);
+
+
             }
 
             @Override

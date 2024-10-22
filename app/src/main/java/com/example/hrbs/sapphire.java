@@ -42,6 +42,6 @@ public class sapphire extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
             }
         });
-        return false;
+
     }
 }

@@ -48,7 +48,7 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
 
         // Set the adapter
         recyclerView.setAdapter(seatAdapter);
-        return false;
+
     }
 
     @Override

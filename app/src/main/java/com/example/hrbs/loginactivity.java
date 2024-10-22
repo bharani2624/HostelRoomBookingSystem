@@ -42,7 +42,10 @@ public class loginactivity extends AppCompatActivity {
         password=findViewById(R.id.login_password);
         loginbtn=findViewById(R.id.loginbutton);
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-
+        if(isLoggedIn())
+        {
+            navigateToMain();
+        }
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +89,7 @@ public class loginactivity extends AppCompatActivity {
         return currentTime<expirationTime;
     }
 
-    private  void navigate()
+    private  void navigateToMain()
     {
         Intent intent=new Intent(loginactivity.this, MainActivity.class);
         startActivity(intent);
@@ -111,7 +114,7 @@ public class loginactivity extends AppCompatActivity {
                     {
                         email.setError(null);
                         SessionSaver(userEmail);
-                        navigate();
+                        navigateToMain();
                     }
                     else
                     {
@@ -132,8 +135,7 @@ public class loginactivity extends AppCompatActivity {
                 Map<String,Object> tokenData=new HashMap<>();
                 tokenData.put("tokenExpiry",expiryTime);
                 reference.child(userEmail.replace(".","_")).updateChildren(tokenData);
-
-
+                
             }
 
             @Override

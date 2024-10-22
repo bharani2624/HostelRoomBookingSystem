@@ -2,6 +2,7 @@ package com.example.hrbs;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class signupupactivity extends AppCompatActivity {
     EditText signupName,signupEmail,signupPassword;
     TextView loginRedirectText;
     Button signupButton;
+    SharedPreferences sharedPreferences;
     FirebaseDatabase database;//Since We are realtime database
     DatabaseReference reference;//for reference
     @SuppressLint("MissingInflatedId")//Incase If the id is not found
@@ -36,6 +38,11 @@ public class signupupactivity extends AppCompatActivity {
         signupPassword=findViewById(R.id.signup_password);
         loginRedirectText=findViewById(R.id.redirectText);
         signupButton=findViewById(R.id.signupbtn);
+        sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
+        if(isLoggedIn())
+        {
+            navigate();
+        }
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +64,18 @@ public class signupupactivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        return false;
+
+    }
+    public boolean isLoggedIn()
+    {
+        long currentTime=System.currentTimeMillis();
+        long expirationTime=sharedPreferences.getLong("tokenExpiry",0);
+        return currentTime<expirationTime;
+    }
+    public void navigate()
+    {
+        Intent intent=new Intent(signupupactivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

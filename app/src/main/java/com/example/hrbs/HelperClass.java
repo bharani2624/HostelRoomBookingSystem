@@ -3,6 +3,13 @@ package com.example.hrbs;
 public class HelperClass {
     String name;
     String email;
+    String roomNo;
+    public String getRoomNo() {
+        return roomNo;
+    }
+    public void setRoomNo(String roomNo) {
+        this.roomNo=roomNo;
+    }
 
     public String getName() {
         return name;
@@ -29,10 +36,11 @@ public class HelperClass {
     }
 
     String password;
-    public HelperClass(String name,String email,String password)
+    public HelperClass(String name,String email,String password,String roomNo)
     {
         this.name=name;
         this.email=email;
         this.password=password;
+        this.roomNo=roomNo;
     }
 }

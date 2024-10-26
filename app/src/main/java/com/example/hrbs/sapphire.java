@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +18,8 @@ public class sapphire extends AppCompatActivity {
 
 
     ImageView close;
-    TextView oopp;
+    private Button sapphireRooms;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +27,15 @@ public class sapphire extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sapphire);
         close=findViewById(R.id.closeIcon);
-        oopp=findViewById(R.id.opop);
-        oopp.setOnClickListener(new View.OnClickListener() {
+        sapphireRooms=findViewById(R.id.sapphireRoom);
+        sapphireRooms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(sapphire.this, booksapphire.class);
-                startActivity(in);
+                Intent intent=new Intent(sapphire.this, booksapphire.class);
+                startActivity(intent);
+                finish();
             }
         });
-
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

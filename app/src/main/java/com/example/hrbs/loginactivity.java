@@ -131,6 +131,8 @@ public class loginactivity extends AppCompatActivity {
                 long expiryTime=currentTime+SESSION_DURATION;
                 SharedPreferences.Editor editor=sharedPreferences.edit();
                 editor.putLong("tokenExpiry",expiryTime);
+                String SharedEmail=email.getText().toString();
+                editor.putString("gmail",SharedEmail);
                 editor.apply();
                 Map<String,Object> tokenData=new HashMap<>();
                 tokenData.put("tokenExpiry",expiryTime);

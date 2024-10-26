@@ -6,7 +6,6 @@
     android:id="@+id/bookSapphire"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".booksapphire"
     android:background="@color/white">
 
     <ScrollView
@@ -98,7 +97,7 @@
                     tools:layout_editor_absoluteX="16dp">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bookSapphireButton"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="149dp"
@@ -112,7 +111,8 @@
                         app:layout_constraintHorizontal_bias="0.449"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.843" />
+                        app:layout_constraintVertical_bias="0.843"
+                        tools:ignore="DuplicateIds" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout

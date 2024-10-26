@@ -31,4 +31,5 @@
     <string name="description_sapphire2">Image of Sapphire room</string>
     <string name="don_t_have_an_account_signup">Don\'t Have An Account? SignUP</string>
     <string name="book">Book</string>
+    <string name="rooms">Rooms</string>
 </resources>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/app_name"
+        android:fillViewport="true"
+        tools:context=".Issues">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#42C3C3C3"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hostelIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="55dp"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="50dp">
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="start"-->
+<!--                        android:src="@drawable/sapphire" />-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Hostel Issues"
+                        android:textSize="25sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tell Your Issues Regarding Hostel"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20sp"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/roomsIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="55dp"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="50dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Room Issues"
+                        android:textSize="25sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Tell Your Issues Regarding Rooms"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/foodIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="55dp"
+                app:cardCornerRadius="20dp"
+                tools:ignore="InvalidId">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="50dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Food Issue"
+                        android:textSize="25sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tell Your Issues Regarding Food"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20sp"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/toiletIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="55dp"
+                app:cardCornerRadius="20dp"
+                tools:ignore="InvalidId">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="50dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Toilet Issues"
+                        android:textSize="25sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tell Your Issues Regarding Toilet"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20sp"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/otherIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="55dp"
+                app:cardCornerRadius="20dp"
+                tools:ignore="InvalidId">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="50dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Other Issues"
+                        android:textSize="25sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tell Your Other Issues Apart From The Above"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20sp"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+

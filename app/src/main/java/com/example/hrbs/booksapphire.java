@@ -3,6 +3,7 @@ package com.example.hrbs;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,12 +23,14 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSeatClickListener {
     private RecyclerView recyclerView;
     private SeatAdapter seatAdapter;
     private List<Seat> seatList;
     private DatabaseReference databaseReference;
+    private DatabaseReference signupReference;
     private Button bookSapphirebtn;
     private Seat selectedSeat;
 
@@ -54,20 +57,22 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
         databaseReference = FirebaseDatabase.getInstance().getReference("seats");
+        signupReference=FirebaseDatabase.getInstance().getReference("users");
+
 
         // Programmatically create seats if they are not already in Firebase
         int seats = 1;
         for (int i = 0; i < 5; i++) {
             for (int seatNumber = 1; seatNumber <= 10; seatNumber++) {
                 String seatLabel = String.valueOf(seats);
-                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com", 4); // Set email to null and count to 4
+                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com", 4);
 
                 DatabaseReference seatRef = databaseReference.child("seat" + seats);
                 seatRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (!snapshot.exists()) {
-                            seatRef.setValue(seat) // Only set value if it doesn't exist
+                            seatRef.setValue(seat)
                                     .addOnSuccessListener(aVoid ->
                                             Toast.makeText(booksapphire.this, "Seat initialized!", Toast.LENGTH_SHORT).show())
                                     .addOnFailureListener(e ->
@@ -95,22 +100,71 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
         bookSapphirebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(booksapphire.this,index, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(booksapphire.this,index, Toast.LENGTH_SHORT).show();
                 DatabaseReference selectedSeatRef = databaseReference.child("seat" + index);
+                String sanitizedEmail=sharedPreferences.getString("gmail","").replace(".","_");
+                DatabaseReference roomRef=signupReference.child(sanitizedEmail).child("roomNo");
+
                 HashMap<String,Object> seatFB=new HashMap<>();
+                HashMap<String,Object>roomFB=new HashMap<>();
                 seatFB.put("available",false);
                 seatFB.put("count",count-1);
                 seatFB.put("selected",true);
                 seatFB.put("userEmail",sharedPreferences.getString("gmail",""));
-                selectedSeatRef.updateChildren(seatFB)
-                        .addOnSuccessListener(aVoid ->
+                roomFB.put("roomNo",index);
+//                String roomNumber = String.valueOf(signupReference.child(sanitizedEmail).child("roomNo").get());
+//                if(roomNumber.equals("null"))
+//                {
+//                    roomRef.setValue(index);
+//                    selectedSeatRef.updateChildren(seatFB)
+//                            .addOnSuccessListener(aVoid ->
+//                            {
+//                                Toast.makeText(booksapphire.this,"Success",Toast.LENGTH_SHORT).show();
+//                            })
+//                            .addOnFailureListener(e ->
+//                            {
+//                                Toast.makeText(booksapphire.this,"Not Booked",Toast.LENGTH_SHORT).show();
+//                            });
+//                }
+//                else
+//                {
+//                    Toast.makeText(booksapphire.this,"You Have Already Booked Your Room",Toast.LENGTH_SHORT).show();
+//                }
+
+
+                signupReference.child(sanitizedEmail).child("roomNo").get().addOnCompleteListener(
+                        task ->
                         {
-                            Toast.makeText(booksapphire.this,"Success",Toast.LENGTH_SHORT).show();
-                        })
-                        .addOnFailureListener(e ->
-                        {
-                            Toast.makeText(booksapphire.this,"Not Booked",Toast.LENGTH_SHORT).show();
-                        });
+                            if(task.isSuccessful())
+                            {
+                                DataSnapshot dataSnapshot= task.getResult();
+                                String RoomNumber=dataSnapshot.exists()?dataSnapshot.getValue(String.class):"null";
+                                if(Objects.equals(RoomNumber, "null"))
+                                {
+                                    roomRef.setValue(index);
+                                    selectedSeatRef.updateChildren(seatFB)
+                                            .addOnSuccessListener(aVoid->{
+                                                Toast.makeText(booksapphire.this,"Successfully Booked",Toast.LENGTH_SHORT).show();
+                                            })
+                                            .addOnFailureListener(e->{
+                                                Toast.makeText(booksapphire.this,"Try Again",Toast.LENGTH_SHORT).show();
+                                            });
+
+                                }
+                                else
+                                {
+                                    Toast.makeText(booksapphire.this,"You Have Already Booked A Room",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            else
+                            {
+                                Toast.makeText(booksapphire.this,"FireBase Error",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+
+
+
             }
         });
 
@@ -144,17 +198,6 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
     @Override
     public void onSeatClick(Seat seat) {
         if (seat.isAvailable()) {
-//            databaseReference.child("seat" + seat.getSeatNumber()).setValue(seat)
-//                    .addOnSuccessListener(aVoid -> {
-//                        Toast.makeText(this, "Selected seat: " + seat.getSeatNumber(), Toast.LENGTH_SHORT).show();
-//                    })
-//                    .addOnFailureListener(e -> {
-//                        Toast.makeText(this, "Failed to reserve seat", Toast.LENGTH_SHORT).show();
-//                    });
-//            if(selectedSeat!=null && selectedSeat!=seat)
-//            {
-//                selectedSeat.setSelected(false);
-//            }
             if (selectedSeat != null && selectedSeat != seat) {
                 int prevIndex=seatList.indexOf(selectedSeat);
                 selectedSeat.setSelected(false);

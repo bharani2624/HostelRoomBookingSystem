@@ -32,4 +32,9 @@
     <string name="don_t_have_an_account_signup">Don\'t Have An Account? SignUP</string>
     <string name="book">Book</string>
     <string name="rooms">Rooms</string>
+    <string-array name="hostelissues">
+        <item>Wifi</item>
+        <item>Gym</item>
+        <item>Students Centre</item>
+    </string-array>
 </resources>

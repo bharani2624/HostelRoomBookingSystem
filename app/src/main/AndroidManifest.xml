@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Hrbs"
         tools:targetApi="31">
         <activity
+            android:name=".FoodIssues"
+            android:exported="false" />
+        <activity
+            android:name=".OtherIssues"
+            android:exported="false" />
+        <activity
+            android:name=".ToiletIssues"
+            android:exported="false" />
+        <activity
             android:name=".RoomIssues"
             android:exported="true" />
         <activity

@@ -65,7 +65,7 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
         for (int i = 0; i < 5; i++) {
             for (int seatNumber = 1; seatNumber <= 10; seatNumber++) {
                 String seatLabel = String.valueOf(seats);
-                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com", 4);
+                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com1","room@gmail.com2","room@gmail.com3","room@gmail.com4", 4);
 
                 DatabaseReference seatRef = databaseReference.child("seat" + seats);
                 seatRef.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/home"
-    android:icon="@drawable/baseline_home_filled_24"
-    android:title="@string/home"
-    />
 
-<item
-    android:id="@+id/query"
-    android:icon="@drawable/baseline_question_mark_24"
-    android:title="@string/query"
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/baseline_home_filled_24"
+        android:tooltipText="Home"
+        android:title="Home"
+         />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/baseline_question_mark_24"
+        android:tooltipText="query"
+        android:title="Query"
         />
-<item
-    android:id="@+id/profile"
-    android:icon="@drawable/baseline_person_24"
-    android:title="@string/profile"
-    />
 </menu>

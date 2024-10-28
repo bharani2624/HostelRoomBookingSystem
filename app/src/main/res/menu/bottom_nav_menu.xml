@@ -5,12 +5,12 @@
         android:id="@+id/nav_home"
         android:icon="@drawable/baseline_home_filled_24"
         android:tooltipText="Home"
-        android:title="Home"
+        android:title=""
          />
     <item
         android:id="@+id/nav_search"
         android:icon="@drawable/baseline_question_mark_24"
         android:tooltipText="query"
-        android:title="Query"
+        android:title=""
         />
 </menu>

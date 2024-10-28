@@ -25,7 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSeatClickListener {
+public class bookdiamond extends AppCompatActivity implements SeatAdapter.OnSeatClickListener {
+
     private RecyclerView recyclerView;
     private SeatAdapter seatAdapter;
     private List<Seat> seatList;
@@ -48,22 +49,23 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
     String index;
     SharedPreferences sharedPreferences;
 
+    @SuppressLint("MissingInflatedId")
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booksapphire);
-
+        setContentView(R.layout.activity_bookdiamond);
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("sapphire");
+        databaseReference = FirebaseDatabase.getInstance().getReference("diamond");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
-
         int seats = 1;
         for (int i = 0; i < 5; i++) {
             for (int seatNumber = 1; seatNumber <= 10; seatNumber++) {
                 String seatLabel = String.valueOf(seats);
-                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com1","room@gmail.com2","room@gmail.com3","room@gmail.com4", 4);
+                Seat seat = new Seat(seatLabel, true, false, "room@gmail.com1","room@gmail.com2","room@gmail.com3","room@gmail.com4", 2);
 
                 DatabaseReference seatRef = databaseReference.child("room" + seats);
                 seatRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -72,29 +74,29 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
                         if (!snapshot.exists()) {
                             seatRef.setValue(seat)
                                     .addOnSuccessListener(aVoid ->
-                                            Toast.makeText(booksapphire.this, "Room initialized", Toast.LENGTH_SHORT).show())
+                                            Toast.makeText(bookdiamond.this, "Room initialized Successfully", Toast.LENGTH_SHORT).show())
                                     .addOnFailureListener(e ->
-                                            Toast.makeText(booksapphire.this, "Failed to initialize room", Toast.LENGTH_SHORT).show());
+                                            Toast.makeText(bookdiamond.this, "Failed to initialize room", Toast.LENGTH_SHORT).show());
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(booksapphire.this, "Error initializing room", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(bookdiamond.this, "Error initializing room", Toast.LENGTH_SHORT).show();
                     }
                 });
 
                 seats++;
             }
         }
-        seatAdapter = new SeatAdapter(seatList, this);
+        seatAdapter = new SeatAdapter(seatList,this);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 10));
         int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.grid_spacing);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(spacingInPixels));
         recyclerView.setAdapter(seatAdapter);
 
         // Listen for seat updates from Firebase
-        bookSapphirebtn=findViewById(R.id.bookSapphireButton);
+        bookSapphirebtn=findViewById(R.id.bookDiamondButton);
         bookSapphirebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,19 +105,19 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
                 String sanitizedEmail=sharedPreferences.getString("gmail","").replace(".","_");
                 DatabaseReference roomRef=signupReference.child(sanitizedEmail).child("roomNo");
                 selectedSeatRef.child("count").get().addOnCompleteListener(task->
-                {
-                    if(task.isSuccessful())
-                    {
-                        DataSnapshot dataSnapshot=task.getResult();
-                        Integer counts=dataSnapshot.getValue(Integer.class);
-                        setCount(counts);
+                        {
+                            if(task.isSuccessful())
+                            {
+                                DataSnapshot dataSnapshot=task.getResult();
+                                Integer counts=dataSnapshot.getValue(Integer.class);
+                                setCount(counts);
 
-                    }
-                    else
-                    {
-                        Toast.makeText(booksapphire.this,"FireBase Error",Toast.LENGTH_SHORT).show();
-                    }
-                }
+                            }
+                            else
+                            {
+                                Toast.makeText(bookdiamond.this,"FireBase Error",Toast.LENGTH_SHORT).show();
+                            }
+                        }
 
                 );
                 signupReference.child(sanitizedEmail).child("roomNo").get().addOnCompleteListener(
@@ -143,25 +145,25 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
                                     roomRef.setValue(index);
                                     selectedSeatRef.updateChildren(seatFB)
                                             .addOnSuccessListener(aVoid->{
-                                                Toast.makeText(booksapphire.this,"Successfully Booked",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(bookdiamond.this,"Successfully Booked",Toast.LENGTH_SHORT).show();
                                             })
                                             .addOnFailureListener(e->{
-                                                Toast.makeText(booksapphire.this,"Try Again",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(bookdiamond.this,"Try Again",Toast.LENGTH_SHORT).show();
                                             });
 
                                 }
                                 else if(count==0)
                                 {
-                                    Toast.makeText(booksapphire.this,"The Room Is Full",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(bookdiamond.this,"The Room Is Full",Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                 {
-                                    Toast.makeText(booksapphire.this,"You Have Already Booked A Room",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(bookdiamond.this,"You Have Already Booked A Room",Toast.LENGTH_SHORT).show();
                                 }
                             }
                             else
                             {
-                                Toast.makeText(booksapphire.this,"FireBase Error",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(bookdiamond.this,"FireBase Error",Toast.LENGTH_SHORT).show();
                             }
                         }
                 );
@@ -191,7 +193,7 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(booksapphire.this, "Failed to load seats", Toast.LENGTH_SHORT).show();
+                Toast.makeText(bookdiamond.this, "Failed to load seats", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -208,7 +210,7 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
             }
 
             seat.setSelected(true);
-           int currIndex=seatList.indexOf(seat);
+            int currIndex=seatList.indexOf(seat);
             seatAdapter.notifyItemChanged(currIndex);
             selectedSeat = seat;
             setIndex(String.valueOf(seat.getSeatNumber()));
@@ -218,5 +220,8 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
         }
     }
 
-
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
 }

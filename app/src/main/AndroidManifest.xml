@@ -13,6 +13,24 @@
         android:theme="@style/Theme.Hrbs"
         tools:targetApi="31">
         <activity
+            android:name=".diamond"
+            android:exported="false" />
+        <activity
+            android:name=".bookdiamond"
+            android:exported="true" />
+        <activity
+            android:name=".bookruby"
+            android:exported="true" />
+        <activity
+            android:name=".bookcoral"
+            android:exported="true" />
+        <activity
+            android:name=".bookpearl"
+            android:exported="true" />
+        <activity
+            android:name=".bookemerald"
+            android:exported="true" />
+        <activity
             android:name=".FoodIssues"
             android:exported="false" />
         <activity

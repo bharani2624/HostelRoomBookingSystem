@@ -13,16 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="booksapphire">
+      <SelectionState runConfigName="bookemerald">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="hostelIssue">
+      <SelectionState runConfigName="bookpearl">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Issues">
+      <SelectionState runConfigName="bookcoral">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="RoomIssues">
+      <SelectionState runConfigName="bookruby">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="bookdiamond">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

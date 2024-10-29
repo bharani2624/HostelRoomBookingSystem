@@ -1,10 +1,247 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".diamond">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphire2"
+                        android:contentDescription="@string/description_sapphire2" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphier3"
+                        />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="415dp"
+                        android:layout_height="523dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sapphire2"
+                        android:contentDescription="@string/description_sapphire2" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="492dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sapphire2" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/closeIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/outline_close_24" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="0dp"
+        android:elevation="0dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/opop"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:gravity="left"
+                    android:text="Entire Diamond Hostel"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+
+                    tools:ignore="RtlHardcoded" />
+
+                <View
+                    android:layout_width="400dp"
+                    android:layout_height="0.95dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ameneties"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:divider="@drawable/empty_tall_divider"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:showDividers="middle
+">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:padding="1dp"
+                        android:text="@string/wi_fi"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="@string/tv"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="@string/indoorgames"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:baselineAligned="false"
+                        android:text="@string/badmintoncourt"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:divider="@drawable/empty_tall_divider"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="@string/non_ac"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="Two Cot"
+                        android:textSize="20sp"
+
+                        />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="400dp"
+                    android:layout_height="2.95dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Rules"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/description"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/diamondRoom"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="50dp"
+                    android:text="@string/rooms"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,11 +1,13 @@
 package com.example.hrbs;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +56,17 @@ public class bookemerald extends AppCompatActivity implements SeatAdapter.OnSeat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookemerald);
 
+        ImageView close=findViewById(R.id.closeIcon);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(bookemerald.this, emerald.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_down,R.anim.slide_up);
+            }
+        });
+
+
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
@@ -93,7 +106,6 @@ public class bookemerald extends AppCompatActivity implements SeatAdapter.OnSeat
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(spacingInPixels));
         recyclerView.setAdapter(seatAdapter);
 
-        // Listen for seat updates from Firebase
         bookSapphirebtn=findViewById(R.id.bookEmeraldButton);
         bookSapphirebtn.setOnClickListener(new View.OnClickListener() {
             @Override

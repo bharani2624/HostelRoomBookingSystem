@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +31,16 @@ public class coral extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
             }
         });
+        Button bookRoom;
+        bookRoom=findViewById(R.id.coralRoom);
+        bookRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(coral.this, bookcoral.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_up);
+            }
+        });
+
     }
 }

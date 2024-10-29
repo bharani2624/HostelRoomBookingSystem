@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                    Intent intent=new Intent(MainActivity.this, Issues.class);
                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                    startActivity(intent);
-                   overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
+//                   overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
                }
 
                 return false;

@@ -219,10 +219,11 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
         android:layout_width="274dp"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="800dp"
+        android:layout_marginTop="850dp"
         android:background="@drawable/glass"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"

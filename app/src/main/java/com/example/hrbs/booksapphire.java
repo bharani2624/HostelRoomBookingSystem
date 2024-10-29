@@ -1,11 +1,13 @@
 package com.example.hrbs;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +54,16 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booksapphire);
+        ImageView close;
+        close=findViewById(R.id.closeIcon);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(booksapphire.this,sapphire.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();

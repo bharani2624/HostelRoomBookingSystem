@@ -110,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
             }
         });
+        diamond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,diamond.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
+            }
+        });
 
     }
 }

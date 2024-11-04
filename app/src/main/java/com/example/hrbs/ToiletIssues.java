@@ -43,7 +43,7 @@ public class ToiletIssues extends AppCompatActivity {
                 String nameOfIssueCreator=name.getText().toString();
                 String rollNoOfIssueCreator=rollno.getText().toString();
                 String issuebyCreator=issues.getText().toString();
-                overAllIssues=new OverAllIssues(nameOfIssueCreator,rollNoOfIssueCreator,null,issuebyCreator);
+                overAllIssues=new OverAllIssues(nameOfIssueCreator,rollNoOfIssueCreator,null,issuebyCreator,false);
 
                 reference.child(rollNoOfIssueCreator).setValue(overAllIssues)
                         .addOnSuccessListener(aVoid->

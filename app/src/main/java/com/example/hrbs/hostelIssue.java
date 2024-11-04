@@ -54,7 +54,7 @@ public class hostelIssue extends AppCompatActivity {
                 String rollNoOfIssueCreator=rollno.getText().toString();
                 String type=spinnerIssues.toString();
                 String issuebyCreator=issues.getText().toString();
-                overAllIssues=new OverAllIssues(nameOfIssueCreator,rollNoOfIssueCreator,type,issuebyCreator);
+                overAllIssues=new OverAllIssues(nameOfIssueCreator,rollNoOfIssueCreator,type,null,false);
 
                 reference.child(rollNoOfIssueCreator).setValue(overAllIssues)
                         .addOnSuccessListener(aVoid->

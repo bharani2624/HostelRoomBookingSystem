@@ -68,7 +68,7 @@ public class booksapphire extends AppCompatActivity implements SeatAdapter.OnSea
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("sapphire");
+        databaseReference = FirebaseDatabase.getInstance().getReference("hostel").child("sapphire");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
 
         int seats = 1;

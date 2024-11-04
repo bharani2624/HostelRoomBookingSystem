@@ -73,7 +73,7 @@ public class bookdiamond extends AppCompatActivity implements SeatAdapter.OnSeat
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("diamond");
+        databaseReference = FirebaseDatabase.getInstance().getReference("hostel5").child("diamond");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
         int seats = 1;
         for (int i = 0; i < 5; i++) {

@@ -34,12 +34,14 @@ public class OverAllIssues {
     }
 
     String name,rollNo,type,issue;
-    public OverAllIssues(String name,String rollNo,String type,String issue)
+    Boolean status;
+    public OverAllIssues(String name,String rollNo,String type,String issue,Boolean status)
     {
         this.name=name;
         this.rollNo=rollNo;
         this.type=type;
         this.issue=issue;
+        this.status=status;
 
     }
 

@@ -70,7 +70,7 @@ public class bookemerald extends AppCompatActivity implements SeatAdapter.OnSeat
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("emerald");
+        databaseReference = FirebaseDatabase.getInstance().getReference("hostel2").child("emerald");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
         int seats = 1;
         for (int i = 0; i < 5; i++) {

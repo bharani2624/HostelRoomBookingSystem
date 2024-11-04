@@ -71,7 +71,7 @@ public class bookpearl extends AppCompatActivity implements SeatAdapter.OnSeatCl
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("pearl");
+        databaseReference = FirebaseDatabase.getInstance().getReference("hostel3").child("pearl");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
         int seats = 1;
         for (int i = 0; i < 5; i++) {

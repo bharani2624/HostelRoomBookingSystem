@@ -71,7 +71,7 @@ public class bookruby extends AppCompatActivity implements SeatAdapter.OnSeatCli
         recyclerView = findViewById(R.id.recyclerView);
         seatList = new ArrayList<>();
         sharedPreferences=getSharedPreferences("LoginPrefs",MODE_PRIVATE);
-        databaseReference = FirebaseDatabase.getInstance().getReference("ruby");
+        databaseReference = FirebaseDatabase.getInstance().getReference("hostel6").child("ruby");
         signupReference=FirebaseDatabase.getInstance().getReference("users");
         int seats = 1;
         for (int i = 0; i < 5; i++) {

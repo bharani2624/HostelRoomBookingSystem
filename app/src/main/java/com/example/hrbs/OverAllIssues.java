@@ -34,6 +34,15 @@ public class OverAllIssues {
     }
 
     String name,rollNo,type,issue;
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
     Boolean status;
     public OverAllIssues(String name,String rollNo,String type,String issue,Boolean status)
     {
